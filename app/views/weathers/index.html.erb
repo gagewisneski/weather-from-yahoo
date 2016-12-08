@@ -1,7 +1,12 @@
+<div class="ima">
 <h1><%= params[:city] + ", " + params[:state].upcase %> Weather</h1>
 <br>
 
-<h3>Current temp = <%= @weather["query"]["results"]["channel"]["item"]["condition"]["temp"] %> <%= @weather["query"]["results"]["channel"]["units"]["temperature"] %></h3>
+<h3>Current temp = <%= @temp %></h3>
+
+<%= @condition %> 
+<img src=<%= @image %>>
+
 
 
 <h3>5 day forecast:</h3>
@@ -12,3 +17,4 @@
   <h4><%= day["low"] %></h4>
   <h4><%= day["text"] %></h4>
 <% end %>
+</div>
