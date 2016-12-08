@@ -1,0 +1,17 @@
+<h1><%= params[:city] + ", " + params[:state].upcase %> Weather</h1>
+<br>
+
+<h3>Current temp = <%= @weather["query"]["results"]["channel"]["item"]["condition"]["temp"] %> <%= @weather["query"]["results"]["channel"]["units"]["temperature"] %></h3>
+
+
+<h3>5 day forecast:</h3>
+<% count = 0 %>
+<% @forecast.each do |day| %>
+  ===========================
+  <h4><%= day["date"] %> <%= day["day"] %></h4>
+  <h4><%= day["high"] %></h4>
+  <h4><%= day["low"] %></h4>
+  <h4><%= day["text"] %></h4>
+  <% count += 1 %>
+  <% break if count == 5 %>
+<% end %>

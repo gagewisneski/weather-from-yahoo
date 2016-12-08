@@ -1,0 +1,11 @@
+<%= form_tag "/", method: :post do %>
+  <div>
+  <%= label_tag :city %>
+  <%= text_field_tag :city %>
+  </div>
+  <div>
+  <%= label_tag :state %>
+  <%= text_field_tag :state %>
+  </div>
+  <%= submit_tag "Give me the forecast!" %>
+<% end %>
